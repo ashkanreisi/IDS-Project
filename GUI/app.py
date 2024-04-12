@@ -28,7 +28,7 @@ model_type = st.sidebar.radio(
     "Select Model", ['YOLOv8n 3M - Faster, less accurate', 'YOLOv8x 68M - Slower, more accurate'])
 
 confidence = float(st.sidebar.slider(
-    "Select Model Confidence Threshold", 25, 100, 40, format="%d%%"))) / 100
+    "Select Model Confidence Threshold", 25, 100, 40, format="%d%%")) / 100
 
 # Selecting Detection Or Segmentation
 if model_type == 'YOLOv8n 3M - Faster, less accurate':
