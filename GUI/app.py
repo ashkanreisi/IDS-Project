@@ -80,7 +80,7 @@ with col2:
                                 )
             boxes = res[0].boxes
             for box in boxes:
-                label = f"{box.cls} {int(box.confidence * 100)}%"  # Change format here
+                label = f"{box.cls} {int(box.conf * 100)}%"  # Change format here
                 bounds = box.bounds  # Assuming bounds are [xmin, ymin, xmax, ymax]
                 draw.rectangle(bounds, outline="red", width=2)
                 draw.text((bounds[0], bounds[1]), label, fill="red")
