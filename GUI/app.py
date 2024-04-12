@@ -48,8 +48,6 @@ source_img = None
 source_img = st.sidebar.file_uploader(
     "Choose an image...", type=("jpg", "jpeg", "png", 'bmp', 'webp'))
 
-st.sidebar.markdown('''<small>[Zach Estreito](https://github.com/zestreito/) & [Ashkan Reisi](https://github.com/ashkanreisi) 2024</small>''', unsafe_allow_html=True)
-
 col1, col2 = st.columns(2)
 with col1:
     try:
@@ -74,11 +72,10 @@ with col2:
         st.image(default_detected_image_path, caption='Detected Image',
                  use_column_width=True)
     else:
-        if st.sidebar.button('Detect Objects'):
+        if st.sidebar.button('Detect Fractures'):
             res = model.predict(uploaded_image,
                                 conf=confidence,
                                 imgsz=640,
-                                augment=True
                                 )
             boxes = res[0].boxes
             res_plotted = res[0].plot()[:, :, ::-1]
@@ -88,7 +85,8 @@ with col2:
                 with st.expander("Detection Results"):
                     for box in boxes:
                         st.write(box.data)
-                        print(vars(box))
             except Exception as ex:
                 # st.write(ex)
                 st.write("No image is uploaded yet!")
+
+st.sidebar.markdown('''<small>[Zach Estreito](https://github.com/zestreito/) & [Ashkan Reisi](https://github.com/ashkanreisi) 2024</small>''', unsafe_allow_html=True)
