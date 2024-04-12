@@ -48,8 +48,7 @@ source_img = None
 source_img = st.sidebar.file_uploader(
     "Choose an image...", type=("jpg", "jpeg", "png", 'bmp', 'webp'))
 
-st.sidebar.markdown('''<hr>''', unsafe_allow_html=True)
-st.sidebar.markdown('''<small>[Zach Estreito](https://github.com/zestreito/) & [Ashkan Reisi](https://github.com/ashkanreisi), 2024</small>''', unsafe_allow_html=True)
+st.sidebar.markdown('''<small>[Zach Estreito](https://github.com/zestreito/) & [Ashkan Reisi](https://github.com/ashkanreisi) 2024</small>''', unsafe_allow_html=True)
 
 col1, col2 = st.columns(2)
 with col1:
@@ -80,6 +79,11 @@ with col2:
                                 conf=confidence
                                 )
             boxes = res[0].boxes
+            for box in boxes:
+                label = f"{box.class_name} {int(box.confidence * 100)}%"  # Change format here
+                bounds = box.bounds  # Assuming bounds are [xmin, ymin, xmax, ymax]
+                draw.rectangle(bounds, outline="red", width=2)
+                draw.text((bounds[0], bounds[1]), label, fill="red")
             res_plotted = res[0].plot()[:, :, ::-1]
             st.image(res_plotted, caption='Detected Image',
                      use_column_width=True)
