@@ -23,5 +23,5 @@ DEFAULT_DETECT_IMAGE = IMAGES_DIR / 'hand_labeled.jpg'
 
 # ML Model config
 MODEL_DIR = ROOT / 'weights'
-HAND_FRACTURE_DETECTION_YOLOV8X = MODEL_DIR / 'yolov8x-bones.pt'
 HAND_FRACTURE_DETECTION_YOLOV8N = MODEL_DIR / 'yolov8n-bones.pt'
+HAND_FRACTURE_DETECTION_YOLOV8X = MODEL_DIR / 'yolov8x-bones.pt'

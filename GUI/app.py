@@ -25,16 +25,16 @@ st.sidebar.header("ML Model Config")
 
 # Model Options
 model_type = st.sidebar.radio(
-    "Select Model", ['Hand Fracture Detection - YOLOv8x', 'Hand Fracture Detection - YOLOv8n'])
+    "Select Model", ['Hand Fracture Detection - YOLOv8 Nano', 'Hand Fracture Detection - YOLOv8 XL'])
 
 confidence = float(st.sidebar.slider(
     "Select Model Confidence Threshold", 25, 100, 40)) / 100
 
 # Selecting Detection Or Segmentation
-if model_type == 'Hand Fracture Detection - YOLOv8x':
-    model_path = Path(settings.HAND_FRACTURE_DETECTION_YOLOV8X)
-elif model_type == 'Hand Fracture Detection - YOLOv8n':
+if model_type == 'Hand Fracture Detection - YOLOv8 Nano':
     model_path = Path(settings.HAND_FRACTURE_DETECTION_YOLOV8N)
+elif model_type == 'Hand Fracture Detection - YOLOv8 XL':
+    model_path = Path(settings.HAND_FRACTURE_DETECTION_YOLOV8X)
 
 # Load Pre-trained ML Model
 try:
