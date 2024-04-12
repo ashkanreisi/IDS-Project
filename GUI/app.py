@@ -81,9 +81,6 @@ with col2:
             boxes = res[0].boxes
             for box in boxes:
                 label = f"{box.cls} {int(box.conf * 100)}%"  # Change format here
-                bounds = box.bounds  # Assuming bounds are [xmin, ymin, xmax, ymax]
-                draw.rectangle(bounds, outline="red", width=2)
-                draw.text((bounds[0], bounds[1]), label, fill="red")
             res_plotted = res[0].plot()[:, :, ::-1]
             st.image(res_plotted, caption='Detected Image',
                      use_column_width=True)
