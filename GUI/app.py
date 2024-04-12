@@ -78,7 +78,7 @@ with col2:
             res = model.predict(uploaded_image,
                                 conf=confidence,
                                 imgsz=640,
-                                visualize=true
+                                augment=True
                                 )
             boxes = res[0].boxes
             res_plotted = res[0].plot()[:, :, ::-1]
