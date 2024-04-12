@@ -49,7 +49,7 @@ source_img = st.sidebar.file_uploader(
     "Choose an image...", type=("jpg", "jpeg", "png", 'bmp', 'webp'))
 
 st.sidebar.markdown('''<hr>''', unsafe_allow_html=True)
-st.sidebar.markdown('''<small> 2024 | [Zach Estreito](https://github.com/zestreito/) | [Ashkan Reisi](https://github.com/ashkanreisi)</small>''', unsafe_allow_html=True)
+st.sidebar.markdown('''<small>[Zach Estreito](https://github.com/zestreito/) & [Ashkan Reisi](https://github.com/ashkanreisi), 2024</small>''', unsafe_allow_html=True)
 
 col1, col2 = st.columns(2)
 with col1:
