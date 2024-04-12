@@ -22,6 +22,9 @@ st.title("Hand Fracture Detection")
 
 # Sidebar
 st.sidebar.header("Model Config")
+st.sidebar.markdown('''<hr>''', unsafe_allow_html=True)
+st.sidebar.markdown('''<small>[Hand Fracture Detection](https://github.com/ashkanreisi/IDS-Project/)  | 2024 | [Zach Estreito](https://github.com/zestreito/) and [Ashkan Reisi](https://github.com/ashkanreisi)</small>''', unsafe_allow_html=True)
+
 
 # Model Options
 model_type = st.sidebar.radio(
