@@ -11,32 +11,30 @@ import helper
 
 # Setting page layout
 st.set_page_config(
-    page_title="Object Detection using YOLOv8",
+    page_title="Bone Fracture Detection",
     page_icon="🤖",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
 # Main page heading
-st.title("Object Detection And Tracking using YOLOv8")
+st.title("Bone Fracture Detection")
 
 # Sidebar
 st.sidebar.header("ML Model Config")
 
 # Model Options
 model_type = st.sidebar.radio(
-    "Select Task", ['Hand Fracture Detection', 'Default Detection', 'Default Segmentation'])
+    "Select Model", ['Hand Fracture Detection - YOLOv8x', 'Hand Fracture Detection - YOLOv8n'])
 
 confidence = float(st.sidebar.slider(
-    "Select Model Confidence", 25, 100, 40)) / 100
+    "Select Model Confidence Threshold", 25, 100, 40)) / 100
 
 # Selecting Detection Or Segmentation
-if model_type == 'Hand Fracture Detection':
-    model_path = Path(settings.HAND_FRACTURE_DETECTION_MODEL)
-elif model_type == 'Default Detection':
-    model_path = Path(settings.DEFAULT_DETECTION_MODEL)
-elif model_type == 'Default Segmentation':
-    model_path = Path(settings.DEFAULT_SEGMENTATION_MODEL)
+if model_type == 'Hand Fracture Detection - YOLOv8x':
+    model_path = Path(settings.HAND_FRACTURE_DETECTION_YOLOV8X)
+elif model_type == 'Hand Fracture Detection - YOLOv8n':
+    model_path = Path(settings.HAND_FRACTURE_DETECTION_YOLOV8N)
 
 # Load Pre-trained ML Model
 try:

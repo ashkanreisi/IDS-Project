@@ -13,29 +13,15 @@ ROOT = ROOT.relative_to(Path.cwd())
 
 # Sources
 IMAGE = 'Image'
-VIDEO = 'Video'
-WEBCAM = 'Webcam'
 
-SOURCES_LIST = [IMAGE, VIDEO, WEBCAM]
+SOURCES_LIST = [IMAGE]
 
 # Images config
 IMAGES_DIR = ROOT / 'images'
 DEFAULT_IMAGE = IMAGES_DIR / 'hand.jpg'
 DEFAULT_DETECT_IMAGE = IMAGES_DIR / 'hand_labeled.jpg'
 
-# Videos config
-VIDEO_DIR = ROOT / 'videos'
-VIDEOS_DICT = {
-    'video_1': VIDEO_DIR / 'video_1.mp4',
-    'video_2': VIDEO_DIR / 'video_2.mp4',
-    'video_3': VIDEO_DIR / 'video_3.mp4',
-}
-
 # ML Model config
 MODEL_DIR = ROOT / 'weights'
-DEFAULT_DETECTION_MODEL = MODEL_DIR / 'yolov8n.pt'
-DEFAULT_SEGMENTATION_MODEL = MODEL_DIR / 'yolov8n-seg.pt'
-HAND_FRACTURE_DETECTION_MODEL = MODEL_DIR / 'best.pt'
-
-# Webcam
-WEBCAM_PATH = 0
+HAND_FRACTURE_DETECTION_YOLOV8X = MODEL_DIR / 'yolov8x-bones.pt'
+HAND_FRACTURE_DETECTION_YOLOV8N = MODEL_DIR / 'yolov8n-bones.pt'
