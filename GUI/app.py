@@ -76,11 +76,11 @@ with col2:
     else:
         if st.sidebar.button('Detect Objects'):
             res = model.predict(uploaded_image,
-                                conf=confidence
+                                conf=confidence,
+                                imgsz=640,
+                                visualize=true
                                 )
             boxes = res[0].boxes
-            for box in boxes:
-                label = f"{box.cls} {int(box.conf * 100)}%"  # Change format here
             res_plotted = res[0].plot()[:, :, ::-1]
             st.image(res_plotted, caption='Detected Image',
                      use_column_width=True)
