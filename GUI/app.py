@@ -11,14 +11,14 @@ import helper
 
 # Setting page layout
 st.set_page_config(
-    page_title="Bone Fracture Detection",
+    page_title="Hand Fracture Detection",
     page_icon="🤖",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
 # Main page heading
-st.title("Bone Fracture Detection")
+st.title("Hand Fracture Detection")
 
 # Sidebar
 st.sidebar.header("ML Model Config")
