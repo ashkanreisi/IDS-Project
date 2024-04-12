@@ -91,6 +91,7 @@ with col2:
                 with st.expander("Detection Results"):
                     for box in boxes:
                         st.write(box.data)
+                        print(vars(box))
             except Exception as ex:
                 # st.write(ex)
                 st.write("No image is uploaded yet!")
