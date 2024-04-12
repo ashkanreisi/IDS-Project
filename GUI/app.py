@@ -25,15 +25,15 @@ st.sidebar.header("Model Config")
 
 # Model Options
 model_type = st.sidebar.radio(
-    "Select Model", ['YOLOv8n 3M', 'YOLOv8x 68M'])
+    "Select Model", ['YOLOv8n 3M - Faster, less accurate', 'YOLOv8x 68M - Slower, more accurate'])
 
 confidence = float(st.sidebar.slider(
     "Select Model Confidence Threshold", 25, 100, 40)) / 100
 
 # Selecting Detection Or Segmentation
-if model_type == 'YOLOv8n 3M':
+if model_type == 'YOLOv8n 3M - Faster, less accurate':
     model_path = Path(settings.HAND_FRACTURE_DETECTION_YOLOV8N)
-elif model_type == 'YOLOv8x 68M':
+elif model_type == 'YOLOv8x 68M - Slower, more accurate':
     model_path = Path(settings.HAND_FRACTURE_DETECTION_YOLOV8X)
 
 # Load Pre-trained ML Model
