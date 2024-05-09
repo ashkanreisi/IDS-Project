@@ -25,7 +25,7 @@ st.sidebar.header("Model Config")
 
 # Model Options
 model_type = st.sidebar.radio(
-    "Select Model", ['YOLOv8n 3M - Faster, less accurate', 'YOLOv8x 68M - Slower, more accurate'])
+    "Select Model", ['YOLOv8n 3M - Faster, less accurate', 'YOLOv8x 68M - Slower, more accurate', 'YOLOv9e 58M - Slower, most accurate'])
 
 confidence = float(st.sidebar.slider(
     "Select Model Confidence Threshold", 25, 100, 40, format="%d%%")) / 100
@@ -35,6 +35,8 @@ if model_type == 'YOLOv8n 3M - Faster, less accurate':
     model_path = Path(settings.HAND_FRACTURE_DETECTION_YOLOV8N)
 elif model_type == 'YOLOv8x 68M - Slower, more accurate':
     model_path = Path(settings.HAND_FRACTURE_DETECTION_YOLOV8X)
+elif model_type == 'YOLOv9e 58M - Slower, most accurate':
+    model_path = Path(settings.HAND_FRACTURE_DETECTION_YOLOV9E)
 
 # Load Pre-trained ML Model
 try:
@@ -76,7 +78,7 @@ with col2:
             res = model.predict(uploaded_image,
                                 conf=confidence,
                                 imgsz=640,
-                                )
+                                device=0)
             boxes = res[0].boxes
             res_plotted = res[0].plot()[:, :, ::-1]
             st.image(res_plotted, caption='Detected Image',
