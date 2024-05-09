@@ -1,0 +1,6 @@
+ultralytics
+wandb
+torch
+torchvision
+torchaudio
+protobuf

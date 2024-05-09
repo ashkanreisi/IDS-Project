@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['fractured']
+
+roboflow:
+  workspace: dnn-learning
+  project: bone-fracture-detection-wvu0x
+  version: 1
+  license: MIT
+  url: https://universe.roboflow.com/dnn-learning/bone-fracture-detection-wvu0x/dataset/1
