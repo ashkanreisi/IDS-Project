@@ -4,7 +4,7 @@ import os
 
 os.environ['WANDB_MODE'] = 'disabled'
 
-model = YOLO('yolov8x.pt')
+model = YOLO('yolov9e.pt')
 model.train(data="/home/zach/jupyter/bones/yolov9/data.yaml",
             cls=0.3878,
             scale=0.008593,
@@ -19,4 +19,4 @@ model.train(data="/home/zach/jupyter/bones/yolov9/data.yaml",
             device=0,
             imgsz=640,
             val=False,
-            batch=24)
+            batch=16)
