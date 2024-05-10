@@ -71,11 +71,11 @@ with col1:
             default_image_path = str(settings.DEFAULT_IMAGE)
             default_image = PIL.Image.open(default_image_path)
             st.image(default_image_path, caption="Default Image",
-                     width=640)
+                     use_column_width=True)
         else:
             uploaded_image = PIL.Image.open(source_img)
             st.image(source_img, caption="Uploaded Image",
-                     width=640)
+                     use_column_width=True)
     except Exception as ex:
         st.error("Error occurred while opening the image.")
         st.error(ex)
@@ -86,7 +86,7 @@ with col2:
         default_detected_image = PIL.Image.open(
             default_detected_image_path)
         st.image(default_detected_image_path, caption='Detected Image',
-                 width=640)
+                 use_column_width=True)
     else:
         if st.sidebar.button('Detect Fractures'):
             res = model.predict(uploaded_image,
@@ -96,7 +96,7 @@ with col2:
             boxes = res[0].boxes
             res_plotted = res[0].plot()[:, :, ::-1]
             st.image(res_plotted, caption='Detected Image',
-                     width=640)
+                     use_column_width=True)
 
 hide_img_fs = '''
 <style>
